@@ -1,0 +1,44 @@
+
+<header>
+    <img src="img/angular.svg">
+    <h1> {{name}}</h1>
+</header>
+
+<main>
+   
+ <section class="todo-list" *ngIf="todos.length">
+
+<div class="todo-item" *ngFor="let todo of todos" [ngClass]="{'completed': todo.completed}">
+<button class="checkbox icon" (click)="toggle(todo)">
+
+<!-- <span *ngIf="!todo.completed" class="material-icons">
+    check_box_outline_blank
+</span>
+
+<span *ngIf="todo.completed" class="material-icons">
+    check_box
+</span> -->
+
+
+<span class="material-icons">
+{{ todo.completed ? "check_box" : "check_box_outline_blank" }}
+</span>
+
+
+</button>
+  <span class="title">{{ todo.title }}</span>
+<div class="actions">
+
+<button class="delete icon" (click)="delete(todo)">
+<span class="material-icons">
+    delete
+</span>
+</button> 
+
+</div>
+</div>
+
+
+    </section>
+
+</main>
